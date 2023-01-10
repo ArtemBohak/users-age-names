@@ -1,0 +1,32 @@
+:root {
+  --adaptive-font: calc(14px + 4 * ((100vw - 320px) / (1280 - 320)));
+}
+
+.card {
+  width: 100%;
+  max-width: 768px;
+  margin: 20px auto;
+  border-radius: 12px;
+  color: black;
+  background-color: white;
+
+  font-size: var(--adaptive-font);
+  font-family: sans-serif;
+  font-weight: 700;
+}
+
+/* @media (min-width: 768px) {
+  .card {
+    font-size: 18px;
+  }
+}
+@media (min-width: 1024px) {
+  .card {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1280px) {
+  .card {
+    font-size: 20px;
+  }
+} */
