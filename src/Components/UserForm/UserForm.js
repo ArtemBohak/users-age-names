@@ -1,21 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 
 import classes from "./UserForm.module.css";
 import Button from "../UI/Button";
 
-function UserForm(props) {
+function UserForm({ invalidInput, validInput }) {
+  const [username, setUserName] = useState("");
+  const [userAge, setUserAge] = useState("");
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if (username.length === 0 || userAge.toString().length === 0) {
+      console.log("not correct username/userAge in UserForm.js");
+      invalidInput((prevState) => {
+        return { ...prevState, isEmpty: false };
+      });
+      return;
+    }
+
+    if (+userAge <= 0) {
+      console.log("not correct userAge in UserForm.js");
+      invalidInput((prevState) => {
+        return { ...prevState, isAllowedNumber: false };
+      });
+      return;
+    }
+
+    console.log(username, userAge);
+    validInput(username, userAge);
+  };
+
+  const usernameChangeHandler = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const ageChangeHandler = (event) => {
+    setUserAge(event.target.value);
+  };
+
   return (
-    <div className={classes.userform}>
-      <div className={classes['userform-username']}>
-        <label htmlFor="usernameInput">Username</label>
-        <input name="usernameInput"></input>
-      </div>
-      <div className={classes['userform-age']}>
-        <label htmlFor="ageInput">Age(Years)</label>
-        <input name="ageInput"></input>
+    <form onSubmit={submitHandler}>
+      <div className={classes.userform}>
+        <div className={classes["userform-username"]}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={usernameChangeHandler}
+          ></input>
+        </div>
+        <div className={classes["userform-age"]}>
+          <label htmlFor="age">Age(Years)</label>
+          <input
+            type="number"
+            name="age"
+            value={userAge}
+            onChange={ageChangeHandler}
+          ></input>
+        </div>
       </div>
       <Button />
-    </div>
+    </form>
   );
 }
 

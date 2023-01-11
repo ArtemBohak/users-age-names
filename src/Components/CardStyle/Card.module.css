@@ -1,8 +1,9 @@
 :root {
-  --adaptive-font: calc(14px + 4 * ((100vw - 320px) / (1280 - 320)));
+  --adaptive-font: calc(16px + 4 * ((100vw - 320px) / (1280 - 320)));
 }
 
 .card {
+  padding: 2% 4% 1% 4%;
   width: 100%;
   max-width: 768px;
   margin: 20px auto;

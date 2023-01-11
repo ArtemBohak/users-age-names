@@ -3,8 +3,9 @@ import React from "react";
 import classes from "./Button.module.css";
 
 function Button() {
+
   return (
-    <button type='submit'>Add User</button>
+    <button type='submit' className={classes['submit-button']}>Add User</button>
   )
 }
 

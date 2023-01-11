@@ -1,0 +1,23 @@
+.submit-button {
+  margin: 2% 0;
+  padding: 1% 2%;
+  width: auto;
+  font-size: calc(var(--adaptive-font) - 2px);
+
+  border-radius: 5px;
+  background-color: #4a0c54;
+  color: white;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #7d258b;
+}
+
+@media (max-width: 576px) {
+  .submit-button {
+    width: 100%;
+    max-width: inherit;
+  }
+}
