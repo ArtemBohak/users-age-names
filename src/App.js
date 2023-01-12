@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import Card from "./Components/CardStyle/Card";
 import UserForm from "./Components/UserForm/UserForm";
 import UserItems from "./Components/UserItems/UserItems";
+import ModalWindow from "./Components/UI/ModalWindow/ModalWindow"
 
 function App() {
   const [isValid, setIsValid] = useState({ isEmpty: true, isAllowedNum: true });
   const [correctData, setCorrectData] = useState([]);
 
   const invalidInput = (valid) => {
-    console.log("invalidInput");
+    // console.log("invalidInput");
     setIsValid(valid);
   };
 
@@ -28,6 +29,7 @@ function App() {
       <Card>
         <UserItems data={[["John", 31], ...correctData]} />
       </Card>
+      <ModalWindow isValid={isValid}/>
     </div>
   );
 }

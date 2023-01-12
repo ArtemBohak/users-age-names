@@ -10,7 +10,7 @@ function UserForm({ invalidInput, validInput }) {
   const submitHandler = (event) => {
     event.preventDefault();
     if (username.length === 0 || userAge.toString().length === 0) {
-      console.log("not correct username/userAge in UserForm.js");
+      // console.log("not correct username/userAge in UserForm.js");
       invalidInput((prevState) => {
         return { ...prevState, isEmpty: false };
       });
@@ -18,7 +18,7 @@ function UserForm({ invalidInput, validInput }) {
     }
 
     if (+userAge <= 0) {
-      console.log("not correct userAge in UserForm.js");
+      // console.log("not correct userAge in UserForm.js");
       invalidInput((prevState) => {
         return { ...prevState, isAllowedNumber: false };
       });

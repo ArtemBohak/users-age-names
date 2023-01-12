@@ -8,14 +8,13 @@ function UserItems({ data }) {
   let userItemsList = data.map((dataItem) => {
     return (
       <UserItem
-        key={new Date().getTime()}
+        key={new Date().getTime() + Math.random()}
         username={dataItem[0]}
         userAge={dataItem[1]}
       />
     );
   });
 
-  console.log(data)
   if (data.length !== 0) {
     return <ul className={classes["user-items-list"]}>{userItemsList}</ul>
   } else {
