@@ -1,7 +1,13 @@
 import React from "react";
 
-import classes from './UserItem.module.css'
+function UserItem({username, userAge}) {
 
-function UserItem() {}
+  return (
+    <li>
+      <span>{username}</span>
+      <span>{` (${userAge} years old)`}</span>
+    </li>
+  )
+}
 
 export default UserItem;

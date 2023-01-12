@@ -1,5 +1,5 @@
 .submit-button {
-  margin: 2% 0;
+  margin: 1vw 0 0 0;
   padding: 1% 2%;
   width: auto;
   font-size: calc(var(--adaptive-font) - 2px);

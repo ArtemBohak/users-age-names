@@ -6,7 +6,7 @@ import UserItems from "./Components/UserItems/UserItems";
 
 function App() {
   const [isValid, setIsValid] = useState({ isEmpty: true, isAllowedNum: true });
-  const [correctData, setCorrectData] = useState({});
+  const [correctData, setCorrectData] = useState([]);
 
   const invalidInput = (valid) => {
     console.log("invalidInput");
@@ -15,7 +15,9 @@ function App() {
 
   const validInput = (correctUsername, correctAge) => {
     console.log("validInput");
-    setCorrectData({ correctUsername, correctAge });
+    setCorrectData((prevState) => {
+      return [...prevState, [correctUsername, correctAge]];
+    });
   };
 
   return (
@@ -24,7 +26,7 @@ function App() {
         <UserForm invalidInput={invalidInput} validInput={validInput} />
       </Card>
       <Card>
-        <UserItems data={correctData} />
+        <UserItems data={[["John", 31], ...correctData]} />
       </Card>
     </div>
   );

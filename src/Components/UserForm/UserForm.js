@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import classes from "./UserForm.module.css";
-import Button from "../UI/Button";
+import Button from "../UI/SubmitButton/Button";
 
 function UserForm({ invalidInput, validInput }) {
   const [username, setUserName] = useState("");
@@ -27,6 +27,8 @@ function UserForm({ invalidInput, validInput }) {
 
     console.log(username, userAge);
     validInput(username, userAge);
+    setUserAge('');
+    setUserName('')
   };
 
   const usernameChangeHandler = (event) => {

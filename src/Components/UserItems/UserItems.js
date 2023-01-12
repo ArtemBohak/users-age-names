@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
 import classes from "./UserItems.module.css";
 import UserItem from "./UserItem";
 
 function UserItems({ data }) {
-  const [userItemsList, setUserItemsList] = useState([]);
   
-  setUserItemsList((prevState) => {
-    return [...prevState, <UserItem username={data[0]} userAge={data[1]} />];
+  let userItemsList = data.map((dataItem) => {
+    return (
+      <UserItem
+        key={new Date().getTime()}
+        username={dataItem[0]}
+        userAge={dataItem[1]}
+      />
+    );
   });
-  
-  return { userItemsList };
+
+  console.log(data)
+  if (data.length !== 0) {
+    return <ul className={classes["user-items-list"]}>{userItemsList}</ul>
+  } else {
+    return <p>No users found</p>
+  };
 }
 
 export default UserItems;
