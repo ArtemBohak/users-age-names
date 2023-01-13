@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <div style={{ overflow: isValid.isShown ? "hidden" : "auto" }}>
+    <div>
       <Card>
         <UserForm invalidInput={invalidInput} validInput={validInput} />
       </Card>
