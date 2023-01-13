@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/users-age-names/static/css/main.52bfecf4.css",
+    "main.js": "/users-age-names/static/js/main.ec785d92.js",
+    "index.html": "/users-age-names/index.html",
+    "main.52bfecf4.css.map": "/users-age-names/static/css/main.52bfecf4.css.map",
+    "main.ec785d92.js.map": "/users-age-names/static/js/main.ec785d92.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52bfecf4.css",
+    "static/js/main.ec785d92.js"
+  ]
+}
