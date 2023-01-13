@@ -1,24 +1,14 @@
 import React from "react";
 import Card from "../../CardStyle/Card";
 
-function ModalWindowContent({ children, isValid, ...props }) {
+function ModalWindowContent({ validParams, className, ...props }) {
+  let content = !validParams.isFilled ? (
+    <p>The fields are not filled</p>
+  ) : (
+    <p>The age should not be below 0</p>
+  );
 
-  if (!isValid.isEmpty) {
-    return (
-      <Card className={props.className}>
-        <p>You have to fill all the fields.</p>
-      </Card>
-    );
-  }
-
-  if (!isValid.isAllowedNum) {
-    console.log('Not allowed num')
-    return (
-      <Card className={props.className}>
-        <p>The number should not be bellow zero.</p>
-      </Card>
-    );
-  }
+  return <Card className={className}>{content}</Card>;
 }
 
 export default ModalWindowContent;

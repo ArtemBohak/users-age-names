@@ -17,8 +17,10 @@
 
 .modal-window__content {
   font-weight: 400;
-  transform: scale(0);
+  transform: scale(0.5);
   transition: 0.5s all ease;
+  display: inline-block;
+  width: auto;
 }
 
 .modal-window.active {

@@ -12,7 +12,7 @@ function UserForm({ invalidInput, validInput }) {
     if (username.length === 0 || userAge.toString().length === 0) {
       // console.log("not correct username/userAge in UserForm.js");
       invalidInput((prevState) => {
-        return { ...prevState, isEmpty: false };
+        return { ...prevState, isShown: true, isFilled: false };
       });
       return;
     }
@@ -20,12 +20,12 @@ function UserForm({ invalidInput, validInput }) {
     if (+userAge <= 0) {
       // console.log("not correct userAge in UserForm.js");
       invalidInput((prevState) => {
-        return { ...prevState, isAllowedNumber: false };
+        return { ...prevState, isShown: true, isAllowedNum: false };
       });
       return;
     }
 
-    console.log(username, userAge);
+    // console.log(username, userAge);
     validInput(username, userAge);
     setUserAge('');
     setUserName('')

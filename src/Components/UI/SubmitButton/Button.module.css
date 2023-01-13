@@ -13,6 +13,7 @@
 
 .submit-button:hover {
   background-color: #7d258b;
+  cursor: pointer;
 }
 
 @media (max-width: 576px) {
