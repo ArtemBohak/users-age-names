@@ -45,7 +45,6 @@ function App() {
             ["John", 31],
             ["John", 31],
             ["John", 31],
-            ["John", 31],
             ...correctData,
           ]}
         />
